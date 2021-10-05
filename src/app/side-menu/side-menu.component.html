@@ -1,0 +1,33 @@
+<metis-menu class="prueba2">
+  <img src="https://itla.edu.do/egresados/assets/img/logo-egresados-invertido.png" alt="" height="100px" />
+  <li>
+    <a routerLink="dashboard" routerLinkActive="metismenu-selected"><b> Dashboard </b>
+    </a>
+  </li>
+
+  <li>
+    <a href="#" routerLinkActive="metismenu-selected" class="has-arrow">
+      <b> {{ "Human_Resources" | translate }} </b>
+    </a>
+
+    <ul>
+      <li>
+        <a routerLink="rrhh/positions" routerLinkActive="metismenu-selected">
+          {{ "Positions" | translate }}
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="rrhh/deparments" routerLinkActive="metismenu-selected">
+          {{ "Deparments" | translate }}
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="rrhh/employees" routerLinkActive="metismenu-selected">
+          {{ "Employees" | translate }}
+        </a>
+      </li>
+    </ul>
+  </li>
+</metis-menu>
