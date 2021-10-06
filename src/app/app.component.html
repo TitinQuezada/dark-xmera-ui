@@ -1,10 +1,10 @@
-<div class="app">
-  <aside class="app-side">
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="side">
     <app-side-menu></app-side-menu>
-  </aside>
+  </mat-drawer>
 
   <main class="app-main">
-    <app-nav-bar></app-nav-bar>
+    <app-nav-bar [drawer]="drawer"></app-nav-bar>
 
     <div class="app-bread-crum">
       <app-bread-crum></app-bread-crum>
@@ -15,4 +15,4 @@
       <router-outlet></router-outlet>
     </div>
   </main>
-</div>
+</mat-drawer-container>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
 import { Languages } from '../shared/enums/languages';
 
@@ -8,13 +9,16 @@ import { Languages } from '../shared/enums/languages';
   styleUrls: ['./nav-bar.component.css'],
 })
 export class NavBarComponent implements OnInit {
+  @Input() drawer: MatDrawer;
   activeLang = 'es';
 
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang(this.activeLang);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.drawer.open();
+  }
 
   setLanguageToSpanish() {
     this.activeLang = Languages.Spanish;

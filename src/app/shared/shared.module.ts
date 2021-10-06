@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../material.module';
+import components from './components';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, HttpClientModule, TranslateModule],
-  exports: [HttpClientModule, TranslateModule],
+  declarations: [...components],
+  imports: [CommonModule, HttpClientModule, TranslateModule, MaterialModule],
+  exports: [HttpClientModule, TranslateModule, MaterialModule, ...components],
 })
 export class SharedModule {}

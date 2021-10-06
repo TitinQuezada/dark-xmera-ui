@@ -9,7 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { MaterialModule } from './material.module';
 import { BreadCrumComponent } from './bread-crum/bread-crum.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -31,7 +30,6 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     MetismenuAngularModule,
     NgxChartsModule,
-    MaterialModule,
     BreadcrumbModule,
     TranslateModule.forRoot({
       loader: {
