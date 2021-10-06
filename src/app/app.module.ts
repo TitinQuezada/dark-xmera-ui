@@ -13,7 +13,7 @@ import { MaterialModule } from './material.module';
 import { BreadCrumComponent } from './bread-crum/bread-crum.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from './shared/shared.module';
 
