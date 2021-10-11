@@ -5,3 +5,25 @@ table {
 th.mat-sort-header-sorted {
   color: black;
 }
+
+.mat-form-field {
+  width: 50%;
+}
+
+.add-btn {
+  width: 110px;
+}
+
+.mat-row:hover .mat-cell {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.no-data-td {
+  pointer-events: none;
+  background-color: #f2f2f2;
+}
+
+.operations-column {
+  width: 160px;
+}

@@ -4,5 +4,19 @@
     "Positions": "Cargos",
     "Deparments": "Departamentos",
     "Employees": "Empleados",
-    "position": "Cargo"
+    "position": "Cargo",
+    "filter": "Filtro",
+    "operations": "Operaciones",
+    "items_per_page": "Registros por pagina",
+    "of": "de",
+    "next_page": "Siguiente página",
+    "previous_page": "Página anterior",
+    "first_page": "Primera página",
+    "last_page": "Ultima página",
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "no_data": "No se encontraron registros",
+    "view": "Ver",
+    "name": "Nombre"
 }

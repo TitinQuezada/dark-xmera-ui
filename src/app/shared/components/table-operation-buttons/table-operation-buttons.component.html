@@ -1,0 +1,11 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
+    <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let tableOperationButton of tableOperationButtons"
+        (click)="tableOperationButton.action(element)">
+        <mat-icon [color]="tableOperationButton.color">{{tableOperationButton.icon}}</mat-icon>
+        <span>{{tableOperationButton.labelKey | translate}}</span>
+    </button>
+</mat-menu>

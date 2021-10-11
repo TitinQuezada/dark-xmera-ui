@@ -4,5 +4,19 @@
     "Positions": "Positions",
     "Deparments": "Deparments",
     "Employees": "Employees",
-    "position": "Position"
+    "position": "Position",
+    "filter": "Filter",
+    "operations": "Operations",
+    "items_per_page": "Items per page",
+    "of": "of",
+    "next_page": "Next page",
+    "previous_page": "Previous page",
+    "first_page": "First page",
+    "last_page": "Last page",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "no_data": "No records found",
+    "view": "View",
+    "name": "Name"
 }
