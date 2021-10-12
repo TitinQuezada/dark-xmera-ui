@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TableOperationButton } from '../interfaces/table-operation-button.interface';
+import { TableOperationButton } from '../../interfaces/table-operation-button.interface';
 
 @Component({
   selector: 'app-table-operation-buttons',

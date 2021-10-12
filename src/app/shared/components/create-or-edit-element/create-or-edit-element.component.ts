@@ -1,5 +1,6 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { InputTypes } from '../../enums/input-types.enum';
 
 @Component({
   selector: 'app-create-or-edit-element',
@@ -7,6 +8,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./create-or-edit-element.component.css'],
 })
 export class CreateOrEditElementComponent implements OnInit {
+  inputTypes = InputTypes;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { inputs: Array<Input>; element: any }
   ) {}

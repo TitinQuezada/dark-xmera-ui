@@ -18,5 +18,6 @@
     "delete": "Delete",
     "no_data": "No records found",
     "view": "View",
-    "name": "Name"
+    "name": "Name",
+    "deparment": "Deparment"
 }

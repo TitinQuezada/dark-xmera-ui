@@ -1,16 +1,14 @@
 <div class="row">
-    <div *ngFor="let input of data.inputs" class="col-md-6">
+    <div *ngFor="let input of data.inputs" [ngClass]="input.columns ? 'col-md-' + input.columns : 'col-md-6'">
 
-        <span [ngSwitch]="input.type">
-            <mat-form-field *ngSwitchCase="'text'" appearance="standard">
-                <mat-label>{{input.label | translate}}</mat-label>
-                <input matInput [placeholder]="input.placeholder">
-                <mat-icon matSuffix>{{input.icon}}</mat-icon>
-            </mat-form-field>
+        <div [ngSwitch]="input.type">
+            <app-dynamic-input *ngSwitchCase="inputTypes.Text" [input]="input"></app-dynamic-input>
+
+            <app-dynamic-select *ngSwitchCase="inputTypes.Select" [input]="input"></app-dynamic-select>
 
             <p *ngSwitchDefault>
                 no hay nada
             </p>
-        </span>
+        </div>
     </div>
 </div>

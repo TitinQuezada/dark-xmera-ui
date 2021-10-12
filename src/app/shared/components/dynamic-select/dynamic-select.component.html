@@ -1,0 +1,6 @@
+<mat-form-field appearance="standard">
+    <mat-label>{{input.labelKey | translate}}</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let item of input.options" [value]="item.value"> {{ item.text }}</mat-option>
+    </mat-select>
+</mat-form-field>

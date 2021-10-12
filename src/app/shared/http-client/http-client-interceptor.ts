@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
 import {
   HttpInterceptor,
-  HttpEvent,
   HttpRequest,
   HttpHandler,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { ToastService } from '../toast/toast.service';
 
 @Injectable()
 export class HttpClientInterceptor implements HttpInterceptor {
-  intercept(
-    httpRequest: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
-    return next.handle(httpRequest);
+  constructor(private toastService: ToastService) {}
+
+  intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<any> {
+    return next.handle(httpRequest).pipe(
+      tap(({ body }) => {
+        if (body?.error) {
+          this.toastService.showError(body?.error.message);
+        }
+      })
+    );
   }
 }

@@ -18,5 +18,6 @@
     "delete": "Eliminar",
     "no_data": "No se encontraron registros",
     "view": "Ver",
-    "name": "Nombre"
+    "name": "Nombre",
+    "deparment": "Departamento"
 }

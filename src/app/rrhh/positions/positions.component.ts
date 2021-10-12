@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateOrEditElementComponent } from 'src/app/shared/components/create-or-edit-element/create-or-edit-element.component';
-import { TableOperationButton } from 'src/app/shared/components/interfaces/table-operation-button.interface';
+import { TableOperationButton } from 'src/app/shared/interfaces/table-operation-button.interface';
 import { HttpClientService } from 'src/app/shared/http-client/http-client.service';
+import { InputSelectModel } from 'src/app/shared/models/input-select-model';
+import { InputModel } from 'src/app/shared/models/input-model';
 
 @Component({
   selector: 'app-positions',
@@ -47,8 +49,8 @@ export class PositionsComponent implements OnInit {
       width: '500px',
       data: {
         inputs: [
-          { type: 'text', label: 'label', icon: 'android' },
-          { type: 'text', label: 'prueba', placeholder: 'placeholder' },
+          new InputModel('name', 12),
+          new InputSelectModel('deparment', 'deparments', 12),
         ],
       },
     });

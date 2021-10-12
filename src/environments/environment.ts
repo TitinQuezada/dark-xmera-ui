@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  httpBaseUrl: 'http://localhost:3001',
+  httpBaseUrl: 'https://dark-xmera-rrhh.herokuapp.com',
 };
 
 /*

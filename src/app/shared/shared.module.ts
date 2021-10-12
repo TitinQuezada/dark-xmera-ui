@@ -7,12 +7,16 @@ import components from './components';
 import { TableOperatioButtonsComponent } from './components/table-operation-buttons/table-operation-buttons.component';
 import { HttpClientInterceptor } from './http-client/http-client-interceptor';
 import { CreateOrEditElementComponent } from './components/create-or-edit-element/create-or-edit-element.component';
+import { DynamicInputComponent } from './components/dynamic-input/dynamic-input.component';
+import { DynamicSelectComponent } from './components/dynamic-select/dynamic-select.component';
 
 @NgModule({
   declarations: [
     ...components,
     TableOperatioButtonsComponent,
     CreateOrEditElementComponent,
+    DynamicInputComponent,
+    DynamicSelectComponent,
   ],
   imports: [CommonModule, HttpClientModule, TranslateModule, MaterialModule],
   exports: [HttpClientModule, TranslateModule, MaterialModule, ...components],

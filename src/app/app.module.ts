@@ -21,6 +21,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from './shared/shared.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { PaginatorIntlService } from './shared/mat-paginator-intl';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { PaginatorIntlService } from './shared/mat-paginator-intl';
       },
     }),
     SharedModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     {

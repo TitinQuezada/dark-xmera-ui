@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  httpBaseUrl: 'https://dark-xmera-rrhh.azurewebsites.net',
 };
