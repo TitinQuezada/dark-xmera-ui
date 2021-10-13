@@ -19,10 +19,8 @@
 
     <table mat-table [dataSource]="dataSource" matSort>
         <ng-container *ngFor="let columnName of displayedColumns" [matColumnDef]="columnName">
-
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{columnName | translate}} </th>
-
-            <th class="operations-column" mat-header-cell *matHeaderCellDef mat-sort-header>
+            <th [ngClass]="{'operations-column': columnName == operationsColumnName}" mat-header-cell *matHeaderCellDef
+                mat-sort-header>
                 {{columnName | translate}}
             </th>
 
