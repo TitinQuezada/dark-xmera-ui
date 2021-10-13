@@ -1,18 +1,11 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpClientService } from '../../http-client/http-client.service';
+import { TableHeader } from '../../interfaces/table-header.interface';
 import { TableOperationButton } from '../../interfaces/table-operation-button.interface';
 import { InputBaseModel } from '../../models/input-base-model';
 import { CreateOrEditElementComponent } from '../create-or-edit-element/create-or-edit-element.component';
@@ -23,17 +16,15 @@ import { CreateOrEditElementComponent } from '../create-or-edit-element/create-o
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
-  data: Array<any> = [];
-  @Input() dataUrl: string;
-  @Input() viewElement: Function = () => {};
   @Input() tableOperationButtons: Array<TableOperationButton>;
-  @Input() noDisplayedColumns: Array<string> = [];
   @Input() inputs: Array<InputBaseModel>;
   @Input() route: string;
+  @Input() headers: Array<TableHeader>;
 
-  private hiddenDataProperties = ['createdDate', 'updatedDate'];
+  data: Array<any> = [];
+  noDisplayedColumns: Array<string> = [];
   firstElementPosition: number = 0;
-  displayedColumns: string[];
+  displayedColumns: string[] = [];
   dataSource = new MatTableDataSource(this.data);
   operationsColumnName = 'operations';
   identificationColumnName = 'id';
@@ -59,27 +50,26 @@ export class TableComponent implements OnInit {
   }
 
   setDisplayedColumns(): void {
-    if (this.data?.length) {
-      this.hiddenDataProperties.forEach((hiddenDataProperty) => {
-        this.noDisplayedColumns.push(hiddenDataProperty);
-      });
+    this.displayedColumns = [];
+    this.noDisplayedColumns = [];
 
-      this.noDisplayedColumns.push(this.identificationColumnName);
+    this.headers.forEach((header) => {
+      if (!header.view.table) {
+        this.noDisplayedColumns.push(header.name);
+      }
 
-      this.displayedColumns = Object.keys(this.data[this.firstElementPosition]);
+      if (header.view.table) {
+        this.displayedColumns.push(header.name);
+      }
+    });
 
-      this.displayedColumns.push(this.operationsColumnName);
-
-      this.displayedColumns = this.displayedColumns.filter(
-        (displayedColumn) => !this.noDisplayedColumns.includes(displayedColumn)
-      );
-    }
+    this.displayedColumns.push(this.operationsColumnName);
   }
 
   getData() {
     this.spinnerService.show();
 
-    this.httpClientService.get(this.dataUrl).then(({ data }) => {
+    this.httpClientService.get(this.route).then(({ data }) => {
       this.data = data;
       this.initializeTable();
       this.spinnerService.hide();
@@ -108,5 +98,9 @@ export class TableComponent implements OnInit {
         this.getData();
       }
     });
+  }
+
+  getHeaderByName(name: string): TableHeader {
+    return this.headers.find((header) => header.name == name);
   }
 }

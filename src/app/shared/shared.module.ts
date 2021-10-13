@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateOrEditElementActionsComponent } from './components/create-or-edit-element-actions/create-or-edit-element-actions.component';
 import { CreateOrEditElementBodyComponent } from './components/create-or-edit-element-body/create-or-edit-element-body.component';
 import { ViewElementComponent } from './components/view-element/view-element.component';
+import { FormatPropertyComponent } from './components/format-property/format-property.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ViewElementComponent } from './components/view-element/view-element.com
     CreateOrEditElementActionsComponent,
     CreateOrEditElementBodyComponent,
     ViewElementComponent,
+    FormatPropertyComponent,
   ],
   imports: [
     CommonModule,

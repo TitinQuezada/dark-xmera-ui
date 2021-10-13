@@ -23,5 +23,7 @@
     "loading": "Loading",
     "cancel": "Cancel",
     "save": "Save",
-    "details": "Details"
+    "details": "Details",
+    "createdDate": "Created date",
+    "updatedDate": "Updated date"
 }

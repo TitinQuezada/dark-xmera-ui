@@ -1,11 +1,16 @@
-<h1 class="text-center">
+<h1>
     {{'details' | translate}}
 </h1>
 
 <div class="row">
-    <div *ngFor="let elementKey of elementKeys" class="col-6">
-        <b>{{elementKey | translate}}:</b>
-        &nbsp;
-        <span>{{data.element[elementKey]}}</span>
-    </div>
+    <ng-container *ngFor="let header of data.headers">
+
+        <div *ngIf="header.view.detail && data.element[header.name]" class="col-6 mb-3 ">
+            <span class="primary">{{header.name | translate}}</span>
+
+            <br />
+
+            <app-format-property [header]="header" [element]="data.element"></app-format-property>
+        </div>
+    </ng-container>
 </div>

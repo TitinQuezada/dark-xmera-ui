@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { TableOperationButton } from 'src/app/shared/interfaces/table-operation-button.interface';
 import { InputSelectModel } from 'src/app/shared/models/input-select-model';
 import { InputModel } from 'src/app/shared/models/input-model';
+import { TableHeader } from 'src/app/shared/interfaces/table-header.interface';
+import { FormatTypes } from 'src/app/shared/enums/format-types.enum';
 
 @Component({
   selector: 'app-positions',
@@ -10,23 +12,11 @@ import { InputModel } from 'src/app/shared/models/input-model';
   styleUrls: ['./positions.component.css'],
 })
 export class PositionsComponent implements OnInit {
-  dataUrl: string = 'positions';
-  noDisplayedColumns: Array<string>;
   route: string = 'positions';
 
-  constructor(private readonly dialog: MatDialog) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.buildNoDisplayedColumns();
-  }
-
-  viewPositionDetails(element): void {
-    console.log(element);
-  }
-
-  buildNoDisplayedColumns() {
-    this.noDisplayedColumns = ['deparmentId'];
-  }
+  ngOnInit(): void {}
 
   buildFormInputs() {
     return [
@@ -42,6 +32,22 @@ export class PositionsComponent implements OnInit {
         optionsUrl: 'deparments',
         columns: 12,
       }),
+    ];
+  }
+
+  buildHeaders(): Array<TableHeader> {
+    return [
+      { name: 'name', view: { table: true, detail: true } },
+      {
+        name: 'createdDate',
+        view: { table: false, detail: true },
+        format: FormatTypes.Date,
+      },
+      {
+        name: 'updatedDate',
+        view: { table: false, detail: true },
+        format: FormatTypes.Date,
+      },
     ];
   }
 }

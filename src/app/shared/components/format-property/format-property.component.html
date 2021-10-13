@@ -1,0 +1,13 @@
+<span [ngSwitch]="header.format">
+    <span *ngSwitchCase="formatTypes.Text">
+        {{element[header.name]}}
+    </span>
+
+    <span *ngSwitchCase="formatTypes.Date">
+        {{element[header.name] | date}}
+    </span>
+
+    <span *ngSwitchDefault>
+        {{element[header.name]}}
+    </span>
+</span>

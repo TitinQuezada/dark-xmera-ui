@@ -23,5 +23,7 @@
     "loading": "Cargando",
     "cancel": "Cancelar",
     "save": "Guardar",
-    "details": "Detalles"
+    "details": "Detalles",
+    "createdDate": "Fecha de creación",
+    "updatedDate": "Fecha de actualización"
 }
