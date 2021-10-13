@@ -1,0 +1,11 @@
+<h1 class="text-center">
+    {{'details' | translate}}
+</h1>
+
+<div class="row">
+    <div *ngFor="let elementKey of elementKeys" class="col-6">
+        <b>{{elementKey | translate}}:</b>
+        &nbsp;
+        <span>{{data.element[elementKey]}}</span>
+    </div>
+</div>

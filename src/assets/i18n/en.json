@@ -19,5 +19,9 @@
     "no_data": "No records found",
     "view": "View",
     "name": "Name",
-    "deparment": "Deparment"
+    "deparment": "Deparment",
+    "loading": "Loading",
+    "cancel": "Cancel",
+    "save": "Save",
+    "details": "Details"
 }

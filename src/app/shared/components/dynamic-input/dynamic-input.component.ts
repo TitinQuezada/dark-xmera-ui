@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { InputTypes } from '../../enums/input-types.enum';
 import { InputModel } from '../../models/input-model';
 
@@ -10,6 +11,7 @@ import { InputModel } from '../../models/input-model';
 export class DynamicInputComponent implements OnInit {
   inputTypes = InputTypes;
   @Input() input: InputModel;
+  @Input() parentFormGroup: FormGroup;
 
   constructor() {}
 

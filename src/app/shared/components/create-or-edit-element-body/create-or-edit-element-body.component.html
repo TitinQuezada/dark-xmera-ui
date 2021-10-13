@@ -1,0 +1,16 @@
+<div class="row">
+    <div *ngFor="let input of inputs" [ngClass]="input.columns ? 'col-md-' + input.columns : 'col-md-6'">
+
+        <div [ngSwitch]="input.type">
+            <app-dynamic-input *ngSwitchCase="inputTypes.Text" [input]="input" [parentFormGroup]="parentFormGroup">
+            </app-dynamic-input>
+
+            <app-dynamic-select *ngSwitchCase="inputTypes.Select" [input]="input" [parentFormGroup]="parentFormGroup">
+            </app-dynamic-select>
+
+            <p *ngSwitchDefault>
+                no hay nada
+            </p>
+        </div>
+    </div>
+</div>

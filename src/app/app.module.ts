@@ -22,6 +22,7 @@ import { SharedModule } from './shared/shared.module';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { PaginatorIntlService } from './shared/mat-paginator-intl';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ToastrModule } from 'ngx-toastr';
     }),
     SharedModule,
     ToastrModule.forRoot(),
+    NgxSpinnerModule,
   ],
   providers: [
     {

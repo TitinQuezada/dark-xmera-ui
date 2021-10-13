@@ -2,14 +2,12 @@ import { InputTypes } from '../enums/input-types.enum';
 import { InputBaseModel } from './input-base-model';
 
 export class InputModel extends InputBaseModel {
-  placeholder: string;
+  placeholderKey: string;
 
-  constructor(labelKey: string, columns?: number, icon?: string) {
-    super();
+  constructor(props: InputModel) {
+    super(props);
 
     this.type = InputTypes.Text;
-    this.labelKey = labelKey;
-    this.icon = icon;
-    this.columns = columns;
+    this.placeholderKey = props.placeholderKey;
   }
 }

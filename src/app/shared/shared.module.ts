@@ -9,6 +9,10 @@ import { HttpClientInterceptor } from './http-client/http-client-interceptor';
 import { CreateOrEditElementComponent } from './components/create-or-edit-element/create-or-edit-element.component';
 import { DynamicInputComponent } from './components/dynamic-input/dynamic-input.component';
 import { DynamicSelectComponent } from './components/dynamic-select/dynamic-select.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateOrEditElementActionsComponent } from './components/create-or-edit-element-actions/create-or-edit-element-actions.component';
+import { CreateOrEditElementBodyComponent } from './components/create-or-edit-element-body/create-or-edit-element-body.component';
+import { ViewElementComponent } from './components/view-element/view-element.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +21,24 @@ import { DynamicSelectComponent } from './components/dynamic-select/dynamic-sele
     CreateOrEditElementComponent,
     DynamicInputComponent,
     DynamicSelectComponent,
+    CreateOrEditElementActionsComponent,
+    CreateOrEditElementBodyComponent,
+    ViewElementComponent,
   ],
-  imports: [CommonModule, HttpClientModule, TranslateModule, MaterialModule],
-  exports: [HttpClientModule, TranslateModule, MaterialModule, ...components],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    TranslateModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
+  exports: [
+    HttpClientModule,
+    TranslateModule,
+    MaterialModule,
+    ...components,
+    ReactiveFormsModule,
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

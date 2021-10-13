@@ -14,19 +14,19 @@ export class HttpClientService {
       .toPromise();
   }
 
-  post(route: string, data: any): Promise<Object> {
+  post(route: string, data: any): Promise<any> {
     return this.httpClient
       .post(`${environment.httpBaseUrl}/${route}`, data)
       .toPromise();
   }
 
-  put(route: string, data: any): Promise<Object> {
+  put(route: string, data: any): Promise<any> {
     return this.httpClient
       .put(`${environment.httpBaseUrl}/${route}`, data)
       .toPromise();
   }
 
-  delete(route: string): Promise<Object> {
+  delete(route: string): Promise<any> {
     return this.httpClient
       .delete(`${environment.httpBaseUrl}/${route}`)
       .toPromise();

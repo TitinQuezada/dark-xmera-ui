@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { HttpClientService } from '../../http-client/http-client.service';
 import { InputSelectModel } from '../../models/input-select-model';
 
@@ -9,18 +10,16 @@ import { InputSelectModel } from '../../models/input-select-model';
 })
 export class DynamicSelectComponent implements OnInit {
   @Input() input: InputSelectModel;
+  @Input() parentFormGroup: FormGroup;
 
   constructor(private readonly httpClientService: HttpClientService) {}
 
   ngOnInit(): void {
     this.httpClientService.get(this.input.optionsUrl).then((response) => {
-      if (response.error) {
-      } else {
-        this.input.options = response.data.map((deparment) => ({
-          value: deparment.id,
-          text: deparment.name,
-        }));
-      }
+      this.input.options = response.data?.map((element) => ({
+        value: element.id,
+        text: element.name,
+      }));
     });
   }
 }

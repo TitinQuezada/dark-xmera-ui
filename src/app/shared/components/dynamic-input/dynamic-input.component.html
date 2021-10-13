@@ -1,6 +1,8 @@
-<mat-form-field appearance="standard">
-    <mat-label>{{input.labelKey | translate}}</mat-label>
-    <input matInput [placeholder]="input.placeholder"
-        (keydown)="input.type == inputTypes.Number ? isNumber($event) : null">
-    <mat-icon matSuffix>{{input.icon}}</mat-icon>
-</mat-form-field>
+<div [formGroup]="parentFormGroup">
+    <mat-form-field class="dynamic" appearance="standard">
+        <mat-label>{{input.labelKey | translate}}</mat-label>
+        <input [formControlName]="input.id" matInput [placeholder]="input.placeholderKey | translate"
+            (keydown)="input.type == inputTypes.Number ? isNumber($event) : null">
+        <mat-icon matSuffix>{{input.icon}}</mat-icon>
+    </mat-form-field>
+</div>

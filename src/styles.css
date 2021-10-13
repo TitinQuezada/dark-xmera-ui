@@ -50,6 +50,7 @@ body {
 }
 
 .app-content {
+  position: relative;
   background-color: white;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -96,4 +97,13 @@ body {
 
 .metismenu-selected {
   color: crimson !important;
+}
+
+.loading {
+  color: white;
+  padding-top: 70px;
+}
+
+h1 {
+  color: #3f51b5;
 }

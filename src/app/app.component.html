@@ -11,6 +11,9 @@
     </div>
 
     <div class="app-content">
+      <ngx-spinner bdColor="rgba(0, 0, 0, 0.9)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="false">
+        <p class="loading"> {{'loading' | translate}} </p>
+      </ngx-spinner>
 
       <router-outlet></router-outlet>
     </div>

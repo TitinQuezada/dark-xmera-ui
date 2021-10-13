@@ -19,5 +19,9 @@
     "no_data": "No se encontraron registros",
     "view": "Ver",
     "name": "Nombre",
-    "deparment": "Departamento"
+    "deparment": "Departamento",
+    "loading": "Cargando",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "details": "Detalles"
 }
