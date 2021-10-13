@@ -96,7 +96,7 @@ export class TableComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateOrEditElementComponent, {
-      width: '8rem',
+      width: '500px',
       data: {
         inputs: this.inputs,
         route: this.route,
