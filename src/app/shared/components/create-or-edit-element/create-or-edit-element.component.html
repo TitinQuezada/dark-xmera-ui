@@ -1,7 +1,7 @@
 <pre *ngIf="!environment.production" style="background-color: aliceblue;">{{formGroup.value | json}}</pre>
 
 <form [formGroup]="formGroup">
-    <h1 class="text-center">Agregar cargo</h1>
+    <h1 class="text-center">{{title | translate}}</h1>
 
     <app-create-or-edit-element-body [inputs]="data.inputs" [parentFormGroup]="formGroup">
     </app-create-or-edit-element-body>

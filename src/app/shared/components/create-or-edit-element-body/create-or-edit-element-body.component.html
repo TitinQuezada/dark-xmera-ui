@@ -8,6 +8,10 @@
             <app-dynamic-select *ngSwitchCase="inputTypes.Select" [input]="input" [parentFormGroup]="parentFormGroup">
             </app-dynamic-select>
 
+            <app-dynamic-text-area *ngSwitchCase="inputTypes.TextArea" [input]="input"
+                [parentFormGroup]="parentFormGroup">
+            </app-dynamic-text-area>
+
             <p *ngSwitchDefault>
                 no hay nada
             </p>

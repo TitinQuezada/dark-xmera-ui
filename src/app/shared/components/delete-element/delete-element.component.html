@@ -1,0 +1,17 @@
+<h1 class="text-center">{{'are_you_shure_delete' | translate}}</h1>
+
+<div class="row mt-3">
+    <div class="col-12 text-center">
+        <button class="me-2" mat-raised-button color="warn" [matTooltip]="'delete' | translate"
+            matTooltipPosition="above" (click)="delete()">
+            <mat-icon>delete</mat-icon>
+            {{'delete' | translate}}
+        </button>
+
+        <button class="me-2" mat-raised-button mat-dialog-close color="primary" [matTooltip]="'cancel' | translate"
+            matTooltipPosition="above">
+            <mat-icon>cancel</mat-icon>
+            {{'cancel' | translate}}
+        </button>
+    </div>
+</div>

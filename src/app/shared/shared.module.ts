@@ -14,6 +14,8 @@ import { CreateOrEditElementActionsComponent } from './components/create-or-edit
 import { CreateOrEditElementBodyComponent } from './components/create-or-edit-element-body/create-or-edit-element-body.component';
 import { ViewElementComponent } from './components/view-element/view-element.component';
 import { FormatPropertyComponent } from './components/format-property/format-property.component';
+import { DeleteElementComponent } from './components/delete-element/delete-element.component';
+import { DynamicTextAreaComponent } from './components/dynamic-text-area/dynamic-text-area.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { FormatPropertyComponent } from './components/format-property/format-pro
     CreateOrEditElementBodyComponent,
     ViewElementComponent,
     FormatPropertyComponent,
+    DeleteElementComponent,
+    DynamicTextAreaComponent,
   ],
   imports: [
     CommonModule,

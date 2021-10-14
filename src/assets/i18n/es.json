@@ -25,5 +25,7 @@
     "save": "Guardar",
     "details": "Detalles",
     "createdDate": "Fecha de creación",
-    "updatedDate": "Fecha de actualización"
+    "updatedDate": "Fecha de actualización",
+    "are_you_shure_delete": "¿Esta seguro que desea eliminar el registro?",
+    "description": "Descripción"
 }

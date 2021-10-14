@@ -25,5 +25,7 @@
     "save": "Save",
     "details": "Details",
     "createdDate": "Created date",
-    "updatedDate": "Updated date"
+    "updatedDate": "Updated date",
+    "are_you_shure_delete": "¿Are you sure you want to delete the record?",
+    "description": "Description"
 }

@@ -20,15 +20,15 @@ export class HttpClientService {
       .toPromise();
   }
 
-  put(route: string, data: any): Promise<any> {
+  put<T>(route: string, id: string, data: any): Promise<any> {
     return this.httpClient
-      .put(`${environment.httpBaseUrl}/${route}`, data)
+      .put(`${environment.httpBaseUrl}/${route}/${id}`, data)
       .toPromise();
   }
 
-  delete(route: string): Promise<any> {
+  delete(route: string, id: string): Promise<any> {
     return this.httpClient
-      .delete(`${environment.httpBaseUrl}/${route}`)
+      .delete(`${environment.httpBaseUrl}/${route}/${id}`)
       .toPromise();
   }
 }

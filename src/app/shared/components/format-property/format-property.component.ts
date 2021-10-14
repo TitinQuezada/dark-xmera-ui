@@ -14,8 +14,5 @@ export class FormatPropertyComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.header);
-    console.log(this.element);
-  }
+  ngOnInit(): void {}
 }

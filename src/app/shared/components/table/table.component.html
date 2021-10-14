@@ -33,7 +33,7 @@
 
             <td mat-cell *matCellDef="let element">
                 <app-table-operation-buttons [headers]="headers" [tableOperationButtons]="tableOperationButtons"
-                    [element]="element">
+                    [element]="element" [inputs]="inputs" [route]="route" (getData)="getData()">
                 </app-table-operation-buttons>
             </td>
         </ng-container>

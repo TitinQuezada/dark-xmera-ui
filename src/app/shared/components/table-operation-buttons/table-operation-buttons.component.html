@@ -8,12 +8,12 @@
         <span>{{'view' | translate}}</span>
     </button>
 
-    <button mat-menu-item>
+    <button mat-menu-item (click)="edit()">
         <mat-icon color="accent">edit</mat-icon>
         <span>{{'edit' | translate}}</span>
     </button>
 
-    <button mat-menu-item>
+    <button mat-menu-item (click)="delete()">
         <mat-icon color="warn">delete</mat-icon>
         <span>{{'delete' | translate}}</span>
     </button>

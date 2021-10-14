@@ -1,0 +1,8 @@
+<div [formGroup]="parentFormGroup">
+    <mat-form-field class="dynamic" appearance="fill">
+        <mat-label>{{input.labelKey | translate}}</mat-label>
+        <textarea class="text-area" [formControlName]="input.id" matInput
+            [placeholder]="input.placeholderKey | translate"></textarea>
+        <mat-icon matSuffix>{{input.icon}}</mat-icon>
+    </mat-form-field>
+</div>

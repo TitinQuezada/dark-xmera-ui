@@ -15,6 +15,7 @@ export class CreateOrEditElementComponent implements OnInit {
   environment = environment;
   inputTypes = InputTypes;
   formGroup = new FormGroup({});
+  title: string;
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
@@ -25,6 +26,13 @@ export class CreateOrEditElementComponent implements OnInit {
 
   ngOnInit(): void {
     this.dialogRef.disableClose = true;
+    this.setTitle();
+    this.initializeFormGroup();
+  }
+
+  initializeFormGroup() {
+    this.data.element?.id &&
+      this.formGroup.addControl('id', new FormControl(this.data.element.id));
 
     this.data.inputs.forEach((input) => {
       this.formGroup.addControl(
@@ -36,9 +44,37 @@ export class CreateOrEditElementComponent implements OnInit {
     });
   }
 
+  setTitle() {
+    if (this.data.element?.id) {
+      this.title = 'edit';
+    } else {
+      this.title = 'add';
+    }
+  }
+
   async saveElement() {
+    if (this.data.element?.id) {
+      await this.editElement();
+    } else {
+      await this.createElement();
+    }
+  }
+
+  async createElement() {
     const { success } = await this.httpClientService.post(
       this.data.route,
+      this.formGroup.value
+    );
+
+    if (success) {
+      this.dialogRef.close(true);
+    }
+  }
+
+  async editElement() {
+    const { success } = await this.httpClientService.put(
+      this.data.route,
+      this.data.element.id,
       this.formGroup.value
     );
 

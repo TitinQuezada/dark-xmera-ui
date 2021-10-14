@@ -71,8 +71,24 @@ export class TableComponent implements OnInit {
 
     this.httpClientService.get(this.route).then(({ data }) => {
       this.data = data;
+      this.sortData();
       this.initializeTable();
+      this.paginator.firstPage();
       this.spinnerService.hide();
+    });
+  }
+
+  sortData() {
+    this.data.sort((firstElement, secondElement) => {
+      const firstDate = firstElement.updatedDate
+        ? firstElement.updatedDate
+        : firstElement.createdDate;
+
+      const secondDate = secondElement.updatedDate
+        ? secondElement.updatedDate
+        : secondElement.createdDate;
+
+      return new Date(secondDate).getTime() - new Date(firstDate).getTime();
     });
   }
 
