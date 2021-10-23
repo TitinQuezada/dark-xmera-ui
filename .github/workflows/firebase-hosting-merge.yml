@@ -28,6 +28,7 @@ jobs:
           name: node-app
           path: |
             dist
+            firebase.json
 
   deploy:
     runs-on: ubuntu-latest

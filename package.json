@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build --prod --sourceMap=false --base-href /dark-xmera-ui/"
+    "build:prod": "ng build --prod"
   },
   "private": true,
   "dependencies": {
