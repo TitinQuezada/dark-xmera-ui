@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
+      - run: node enviroments.js
+        env:
+          PRODUCTION_ENVIROMENT: "${{ secrets.PRODUCTION_ENVIROMENT }}"
 
       - name: npm install, build
         run: |
