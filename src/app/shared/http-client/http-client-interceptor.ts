@@ -16,7 +16,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
     return next.handle(httpRequest).pipe(
       tap(({ body }) => {
         if (body?.error) {
-          this.toastService.showError(body?.error.message);
+          this.toastService.showError(body?.error.errorMessage);
         }
       })
     );
