@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InputTypes } from '../../enums/input-types.enum';
 import { environment } from 'src/environments/environment';
-import { HttpClientService } from '../../http-client/http-client.service';
+import { ApiGatewayHttpClientService } from '../../http-client/api-gateway-http-client.service';
 import { InputBaseModel } from '../../models/input-base-model';
 
 @Component({
@@ -21,7 +21,7 @@ export class CreateOrEditElementComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data: { inputs: Array<InputBaseModel>; element: any; route: string },
     private dialogRef: MatDialogRef<CreateOrEditElementComponent>,
-    private readonly httpClientService: HttpClientService
+    private readonly httpClientService: ApiGatewayHttpClientService
   ) {}
 
   ngOnInit(): void {

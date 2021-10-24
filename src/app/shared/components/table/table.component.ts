@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { HttpClientService } from '../../http-client/http-client.service';
+import { ApiGatewayHttpClientService } from '../../http-client/api-gateway-http-client.service';
 import { TableHeader } from '../../interfaces/table-header.interface';
 import { TableOperationButton } from '../../interfaces/table-operation-button.interface';
 import { InputBaseModel } from '../../models/input-base-model';
@@ -33,7 +33,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private readonly httpClientService: HttpClientService,
+    private readonly httpClientService: ApiGatewayHttpClientService,
     private readonly spinnerService: NgxSpinnerService,
     private readonly dialog: MatDialog
   ) {}

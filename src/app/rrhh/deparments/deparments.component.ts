@@ -10,7 +10,7 @@ import { InputTextAreaModel } from 'src/app/shared/models/text-area-model';
   styleUrls: ['./deparments.component.css'],
 })
 export class DeparmentsComponent implements OnInit {
-  route: string = 'deparments';
+  route: string = 'rrhh/deparments';
 
   constructor() {}
 

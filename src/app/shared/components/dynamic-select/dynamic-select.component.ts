@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { HttpClientService } from '../../http-client/http-client.service';
+import { ApiGatewayHttpClientService } from '../../http-client/api-gateway-http-client.service';
 import { InputSelectModel } from '../../models/input-select-model';
 
 @Component({
@@ -12,7 +12,9 @@ export class DynamicSelectComponent implements OnInit {
   @Input() input: InputSelectModel;
   @Input() parentFormGroup: FormGroup;
 
-  constructor(private readonly httpClientService: HttpClientService) {}
+  constructor(
+    private readonly httpClientService: ApiGatewayHttpClientService
+  ) {}
 
   ngOnInit(): void {
     this.httpClientService.get(this.input.optionsUrl).then((response) => {

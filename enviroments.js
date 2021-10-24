@@ -7,9 +7,10 @@ const productionFile = 'enviroment.prod.ts';
 
 const content = process.env.PRODUCTION_ENVIROMENT;
 
+const fileRoute = directory + "/" + file;
+const productionFileRoute = directory + "/" + productionFile;
 
 fs.access(directory, fs.constants.F_OK, (error) => {
-  const fileRoute = directory + "/" + file;
 
   if (error) {
     console.log('src dont exist , creating...', process.cwd());
@@ -25,14 +26,20 @@ fs.access(directory, fs.constants.F_OK, (error) => {
 
   try {
     fs.writeFileSync(fileRoute, content);
-    fs.writeFileSync(directory + "/" + productionFile, content);
+    fs.writeFileSync(productionFileRoute, content);
 
     console.log('Created successfully in', process.cwd());
 
     if (fs.existsSync(fileRoute)) {
       console.log('File is created', path.resolve(fileRoute));
-      const str = fs.readFileSync(fileRoute).toString();
-      console.log(str);
+      const file = fs.readFileSync(fileRoute).toString();
+      console.log(file);
+    }
+
+    if (fs.existsSync(productionFileRoute)) {
+      console.log('File is created', path.resolve(productionFile));
+      const file = fs.readFileSync(productionFileRoute).toString();
+      console.log(file);
     }
 
   } catch (error) {

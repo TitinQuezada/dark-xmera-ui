@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  httpBaseUrl: 'https://dark-xmera-rrhh.herokuapp.com',
+  apiGatewayUrl: 'https://dark-xmera-api-gateway.azurewebsites.net/api',
 };
 
 /*

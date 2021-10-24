@@ -5,30 +5,30 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class HttpClientService {
+export class ApiGatewayHttpClientService {
   constructor(private readonly httpClient: HttpClient) {}
 
   get(route: string): Promise<any> {
     return this.httpClient
-      .get(`${environment.httpBaseUrl}/${route}`)
+      .get(`${environment.apiGatewayUrl}/${route}`)
       .toPromise();
   }
 
   post(route: string, data: any): Promise<any> {
     return this.httpClient
-      .post(`${environment.httpBaseUrl}/${route}`, data)
+      .post(`${environment.apiGatewayUrl}/${route}`, data)
       .toPromise();
   }
 
   put<T>(route: string, id: string, data: any): Promise<any> {
     return this.httpClient
-      .put(`${environment.httpBaseUrl}/${route}/${id}`, data)
+      .put(`${environment.apiGatewayUrl}/${route}/${id}`, data)
       .toPromise();
   }
 
   delete(route: string, id: string): Promise<any> {
     return this.httpClient
-      .delete(`${environment.httpBaseUrl}/${route}/${id}`)
+      .delete(`${environment.apiGatewayUrl}/${route}/${id}`)
       .toPromise();
   }
 }

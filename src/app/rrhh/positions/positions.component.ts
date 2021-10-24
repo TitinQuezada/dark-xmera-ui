@@ -12,7 +12,7 @@ import { FormatTypes } from 'src/app/shared/enums/format-types.enum';
   styleUrls: ['./positions.component.css'],
 })
 export class PositionsComponent implements OnInit {
-  route: string = 'positions';
+  route: string = 'rrhh/positions';
 
   constructor() {}
 

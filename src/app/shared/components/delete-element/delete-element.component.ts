@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { HttpClientService } from '../../http-client/http-client.service';
+import { ApiGatewayHttpClientService } from '../../http-client/api-gateway-http-client.service';
 
 @Component({
   selector: 'app-delete-element',
@@ -12,7 +12,7 @@ export class DeleteElementComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data: { element: any; route: string },
     private dialogRef: MatDialogRef<DeleteElementComponent>,
-    private readonly httpClientService: HttpClientService
+    private readonly httpClientService: ApiGatewayHttpClientService
   ) {}
 
   ngOnInit(): void {
