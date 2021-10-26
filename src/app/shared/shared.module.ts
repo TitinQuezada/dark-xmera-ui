@@ -18,19 +18,7 @@ import { DeleteElementComponent } from './components/delete-element/delete-eleme
 import { DynamicTextAreaComponent } from './components/dynamic-text-area/dynamic-text-area.component';
 
 @NgModule({
-  declarations: [
-    ...components,
-    TableOperatioButtonsComponent,
-    CreateOrEditElementComponent,
-    DynamicInputComponent,
-    DynamicSelectComponent,
-    CreateOrEditElementActionsComponent,
-    CreateOrEditElementBodyComponent,
-    ViewElementComponent,
-    FormatPropertyComponent,
-    DeleteElementComponent,
-    DynamicTextAreaComponent,
-  ],
+  declarations: [...components],
   imports: [
     CommonModule,
     HttpClientModule,

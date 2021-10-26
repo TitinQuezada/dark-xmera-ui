@@ -1,4 +1,4 @@
-<mat-drawer-container autosize>
+<mat-drawer-container *ngIf="!isLoginRoute" autosize>
   <mat-drawer #drawer mode="side">
     <app-side-menu></app-side-menu>
   </mat-drawer>
@@ -11,11 +11,21 @@
     </div>
 
     <div class="app-content">
-      <ngx-spinner bdColor="rgba(0, 0, 0, 0.9)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="false">
-        <p class="loading"> {{'loading' | translate}} </p>
+      <ngx-spinner
+        bdColor="rgba(0, 0, 0, 0.9)"
+        size="medium"
+        color="#fff"
+        type="square-jelly-box"
+        [fullScreen]="false"
+      >
+        <p class="loading">{{ "loading" | translate }}</p>
       </ngx-spinner>
 
       <router-outlet></router-outlet>
     </div>
   </main>
 </mat-drawer-container>
+
+<div class="centered" *ngIf="isLoginRoute">
+  <router-outlet></router-outlet>
+</div>

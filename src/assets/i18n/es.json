@@ -27,5 +27,10 @@
     "createdDate": "Fecha de creación",
     "updatedDate": "Fecha de actualización",
     "are_you_shure_delete": "¿Esta seguro que desea eliminar el registro?",
-    "description": "Descripción"
+    "description": "Descripción",
+    "login": "Iniciar sesión",
+    "remember_me": "Recuerdame",
+    "forgot_password": "¿Se te olvidó tu contraseña?",
+    "user_name": "Nombre de usuario",
+    "password": "Contraseña"
 }

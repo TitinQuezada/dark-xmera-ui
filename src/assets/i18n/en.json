@@ -27,5 +27,10 @@
     "createdDate": "Created date",
     "updatedDate": "Updated date",
     "are_you_shure_delete": "¿Are you sure you want to delete the record?",
-    "description": "Description"
+    "description": "Description",
+    "login": "Login",
+    "remember_me": "Remember me",
+    "forgot_password": "¿Forgot password?",
+    "user_name": "User name",
+    "password": "Password"
 }
