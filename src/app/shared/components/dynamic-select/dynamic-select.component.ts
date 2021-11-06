@@ -17,11 +17,13 @@ export class DynamicSelectComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.httpClientService.get(this.input.optionsUrl).then((response) => {
-      this.input.options = response.data?.map((element) => ({
-        value: element.id,
-        text: element.name,
-      }));
-    });
+    this.httpClientService
+      .get<Array<any>>(this.input.optionsUrl)
+      .then((response) => {
+        this.input.options = response.data?.map((element) => ({
+          value: element.id,
+          text: element.name,
+        }));
+      });
   }
 }

@@ -1,4 +1,4 @@
-<form class="login p-3">
+<form [formGroup]="formGroup" class="login p-3">
   <div class="row">
     <div class="col-12 text-center">
       <mat-icon color="primary" class="icon">supervised_user_circle</mat-icon>
@@ -15,7 +15,11 @@
     <div class="col-12">
       <mat-form-field class="dynamic" appearance="standard">
         <mat-label>{{ "user_name" | translate }}</mat-label>
-        <input matInput [placeholder]="'user_name' | translate" />
+        <input
+          formControlName="userName"
+          matInput
+          [placeholder]="'user_name' | translate"
+        />
         <mat-icon color="primary" matSuffix>supervisor_account</mat-icon>
       </mat-form-field>
     </div>
@@ -26,6 +30,7 @@
       <mat-form-field class="dynamic" appearance="standard">
         <mat-label>{{ "password" | translate }}</mat-label>
         <input
+          formControlName="password"
           type="password"
           matInput
           [placeholder]="'password' | translate"
@@ -55,8 +60,15 @@
         color="primary"
         [matTooltip]="'login' | translate"
         matTooltipPosition="above"
+        [ngClass]="{ disabled: isLoading }"
       >
-        {{ "login" | translate }}
+        <span *ngIf="!isLoading">
+          {{ "login" | translate }}
+        </span>
+
+        <span *ngIf="isLoading" class="blink">
+          {{ "loading" | translate }}
+        </span>
       </button>
     </div>
   </div>

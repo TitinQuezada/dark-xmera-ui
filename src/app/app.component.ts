@@ -26,8 +26,6 @@ export class AppComponent implements OnInit {
       this.spinnerService.hide();
 
       if (event instanceof NavigationEnd) {
-        console.log(event.url);
-
         if (event.url == '/') {
           this.isLoginRoute = true;
         } else {

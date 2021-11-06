@@ -13,6 +13,14 @@ export class HttpClientInterceptor implements HttpInterceptor {
   constructor(private toastService: ToastService) {}
 
   intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<any> {
+    // const token: string = localStorage.getItem('token');
+
+    // if (token) {
+    //   httpRequest.headers.append('authorization', `Bearer ${token}`);
+    // }
+
+    // console.log(httpRequest);
+
     return next.handle(httpRequest).pipe(
       tap(({ body }) => {
         if (body?.error) {

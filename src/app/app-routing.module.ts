@@ -8,6 +8,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./login/login.module').then((module) => module.LoginModule),
+    outlet: 'login',
   },
   {
     path: 'dashboard',

@@ -5,6 +5,11 @@ import { PositionsComponent } from './positions/positions.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: PositionsComponent,
+    data: { breadcrumb: { alias: 'Positions' } },
+  },
+  {
     path: 'positions',
     component: PositionsComponent,
     data: { breadcrumb: { alias: 'Positions' } },

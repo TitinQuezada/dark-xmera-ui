@@ -69,7 +69,7 @@ export class TableComponent implements OnInit {
   getData() {
     this.spinnerService.show();
 
-    this.httpClientService.get(this.route).then(({ data }) => {
+    this.httpClientService.get<Array<any>>(this.route).then(({ data }) => {
       this.data = data;
       this.sortData();
       this.initializeTable();
