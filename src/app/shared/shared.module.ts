@@ -4,18 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MaterialModule } from '../material.module';
 import components from './components';
-import { TableOperatioButtonsComponent } from './components/table-operation-buttons/table-operation-buttons.component';
 import { HttpClientInterceptor } from './http-client/http-client-interceptor';
-import { CreateOrEditElementComponent } from './components/create-or-edit-element/create-or-edit-element.component';
-import { DynamicInputComponent } from './components/dynamic-input/dynamic-input.component';
-import { DynamicSelectComponent } from './components/dynamic-select/dynamic-select.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CreateOrEditElementActionsComponent } from './components/create-or-edit-element-actions/create-or-edit-element-actions.component';
-import { CreateOrEditElementBodyComponent } from './components/create-or-edit-element-body/create-or-edit-element-body.component';
-import { ViewElementComponent } from './components/view-element/view-element.component';
-import { FormatPropertyComponent } from './components/format-property/format-property.component';
-import { DeleteElementComponent } from './components/delete-element/delete-element.component';
-import { DynamicTextAreaComponent } from './components/dynamic-text-area/dynamic-text-area.component';
 
 @NgModule({
   declarations: [...components],

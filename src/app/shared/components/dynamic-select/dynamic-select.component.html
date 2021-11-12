@@ -1,8 +1,10 @@
 <div [formGroup]="parentFormGroup">
-    <mat-form-field class="dynamic" appearance="standard">
-        <mat-label>{{input.labelKey | translate}}</mat-label>
-        <mat-select [formControlName]="input.id">
-            <mat-option *ngFor="let item of input.options" [value]="item.value"> {{ item.text }}</mat-option>
-        </mat-select>
-    </mat-form-field>
+  <mat-form-field class="dynamic" appearance="standard">
+    <mat-label>{{ input.labelKey | translate }}</mat-label>
+    <mat-select [formControlName]="input.id" [multiple]="input.isMultiple">
+      <mat-option *ngFor="let item of input.options" [value]="item.value">
+        {{ item.text }}</mat-option
+      >
+    </mat-select>
+  </mat-form-field>
 </div>

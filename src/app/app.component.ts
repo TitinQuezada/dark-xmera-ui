@@ -11,7 +11,7 @@ import { Languages } from './shared/enums/languages';
 })
 export class AppComponent implements OnInit {
   title = 'dark-xmera-ui';
-  isLoginRoute: boolean = true;
+  isLoginRoute: boolean = false;
 
   constructor(
     private readonly router: Router,
@@ -24,7 +24,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event: Event) => {
       this.spinnerService.hide();
-
       if (event instanceof NavigationEnd) {
         if (event.url == '/') {
           this.isLoginRoute = true;

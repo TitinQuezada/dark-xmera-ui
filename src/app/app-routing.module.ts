@@ -21,6 +21,14 @@ const routes: Routes = [
       import('./rrhh/rrhh.module').then((module) => module.RrhhModule),
     data: { breadcrumb: { alias: 'Human_Resources', disable: true } },
   },
+  {
+    path: 'security',
+    loadChildren: () =>
+      import('./security/security.module').then(
+        (module) => module.SecurityModule
+      ),
+    data: { breadcrumb: { alias: 'security', disable: true } },
+  },
 ];
 
 @NgModule({

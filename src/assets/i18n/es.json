@@ -32,5 +32,12 @@
     "remember_me": "Recuerdame",
     "forgot_password": "¿Se te olvidó tu contraseña?",
     "user_name": "Nombre de usuario",
-    "password": "Contraseña"
+    "password": "Contraseña",
+    "security": "Seguridad",
+    "permissions": "Permisos",
+    "spanish": "Español",
+    "english": "Ingles",
+    "roles": "Roles",
+    "modules": "Modulos",
+    "screens": "Pantallas"
 }
