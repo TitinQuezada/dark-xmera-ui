@@ -3,6 +3,7 @@ import { FormatTypes } from 'src/app/shared/enums/format-types.enum';
 import { TableHeader } from 'src/app/shared/interfaces/table-header.interface';
 import { InputModel } from 'src/app/shared/models/input-model';
 import { InputSelectModel } from 'src/app/shared/models/input-select-model';
+import { InputTextAreaModel } from 'src/app/shared/models/text-area-model';
 
 @Component({
   selector: 'app-roles',
@@ -24,11 +25,24 @@ export class RolesComponent implements OnInit {
         placeholderKey: 'name',
         columns: 12,
       }),
+      new InputTextAreaModel({
+        id: 'description',
+        labelKey: 'description',
+        placeholderKey: 'description',
+        columns: 12,
+      }),
       new InputSelectModel({
         id: 'modulesIds',
         labelKey: 'modules',
         optionsUrl: 'security/modules',
-        columns: 12,
+        columns: 6,
+        isMultiple: true,
+      }),
+      new InputSelectModel({
+        id: 'screensIds',
+        labelKey: 'screens',
+        optionsUrl: 'security/screens',
+        columns: 6,
         isMultiple: true,
       }),
     ];

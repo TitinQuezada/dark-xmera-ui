@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ApiGatewayHttpClientService } from '../../http-client/api-gateway-http-client.service';
+import { Option } from '../../interfaces/option.interface';
 import { InputSelectModel } from '../../models/input-select-model';
 
 @Component({
@@ -11,6 +12,8 @@ import { InputSelectModel } from '../../models/input-select-model';
 export class DynamicSelectComponent implements OnInit {
   @Input() input: InputSelectModel;
   @Input() parentFormGroup: FormGroup;
+  filterOptions: Array<Option>;
+  isLoading: boolean = true;
 
   constructor(
     private readonly httpClientService: ApiGatewayHttpClientService
@@ -24,6 +27,17 @@ export class DynamicSelectComponent implements OnInit {
           value: element.id,
           text: element.name,
         }));
+
+        this.filterOptions = this.input.options;
+        this.isLoading = false;
+        this.parentFormGroup.get(this.input.id).enable();
       });
+  }
+
+  search(searchText: string): void {
+    this.filterOptions = this.input.options.filter((option) => {
+      const searchTextResult = searchText.toLowerCase();
+      return option.text.toLowerCase().includes(searchTextResult);
+    });
   }
 }

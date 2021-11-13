@@ -35,13 +35,43 @@ export class CreateOrEditElementComponent implements OnInit {
       this.formGroup.addControl('id', new FormControl(this.data.element.id));
 
     this.data.inputs.forEach((input) => {
+      const defaultValue = this.getDefaultValue(input.type);
+
       this.formGroup.addControl(
         input.id,
         this.data.element
           ? new FormControl(this.data.element[input.id])
-          : new FormControl('')
+          : new FormControl(defaultValue)
       );
+
+      this.disableDependencyInput(input);
     });
+  }
+
+  getDefaultValue(inputType: string) {
+    switch (inputType) {
+      case InputTypes.Text:
+        return '';
+      case InputTypes.TextArea:
+        return '';
+      case InputTypes.Number:
+        return 0;
+      case InputTypes.Select:
+        return [];
+      default:
+        return '';
+    }
+  }
+
+  disableDependencyInput(input: InputBaseModel) {
+    switch (input.type) {
+      case InputTypes.Select:
+        this.formGroup.get(input.id).disable();
+        break;
+
+      default:
+        break;
+    }
   }
 
   setTitle() {

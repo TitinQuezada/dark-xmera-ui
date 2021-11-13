@@ -6,6 +6,8 @@ export class InputSelectModel extends InputBaseModel {
   options?: Array<Option>;
   optionsUrl: string;
   isMultiple?: boolean;
+  isFilterable?: boolean;
+  dependencyId?: string;
 
   constructor(props: InputSelectModel) {
     super(props);
@@ -13,5 +15,7 @@ export class InputSelectModel extends InputBaseModel {
     this.type = InputTypes.Select;
     this.optionsUrl = props.optionsUrl;
     this.isMultiple = props.isMultiple;
+    this.isFilterable = props.isFilterable == null ? true : props.isFilterable;
+    this.dependencyId = props.dependencyId;
   }
 }

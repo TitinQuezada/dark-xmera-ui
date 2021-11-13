@@ -6,9 +6,10 @@ import { MaterialModule } from '../material.module';
 import components from './components';
 import { HttpClientInterceptor } from './http-client/http-client-interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SearchFieldComponent } from './components/search-field/search-field.component';
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, SearchFieldComponent],
   imports: [
     CommonModule,
     HttpClientModule,

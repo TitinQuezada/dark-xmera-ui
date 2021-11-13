@@ -1,10 +1,26 @@
 <div [formGroup]="parentFormGroup">
   <mat-form-field class="dynamic" appearance="standard">
-    <mat-label>{{ input.labelKey | translate }}</mat-label>
-    <mat-select [formControlName]="input.id" [multiple]="input.isMultiple">
-      <mat-option *ngFor="let item of input.options" [value]="item.value">
-        {{ item.text }}</mat-option
+    <mat-label *ngIf="isLoading">
+      <div class="select-placeholder-container">
+        <span>{{ "loading" | translate }}</span>
+        <mat-spinner class="spinner" diameter="20"></mat-spinner>
+      </div>
+    </mat-label>
+
+    <mat-select
+      [placeholder]="input.labelKey | translate"
+      [formControlName]="input.id"
+      [multiple]="input.isMultiple"
+    >
+      <app-search-field
+        *ngIf="input.isFilterable"
+        (input)="search($event.target.value)"
       >
+      </app-search-field>
+
+      <mat-option *ngFor="let option of filterOptions" [value]="option.value">
+        {{ option.text }}
+      </mat-option>
     </mat-select>
   </mat-form-field>
 </div>
